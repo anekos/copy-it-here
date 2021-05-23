@@ -7,6 +7,7 @@ import (
   "io/ioutil"
   "os"
   "path/filepath"
+  "strings"
   "time"
 )
 
@@ -54,7 +55,7 @@ func ReadTarget() string {
     if err != nil {
       Die(err)
     }
-    return string(content)
+    return strings.TrimSpace(string(content))
   }
 
   return filepath.Dir(os.Args[0])
